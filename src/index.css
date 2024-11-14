@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+:root {
+  --brand-color: #fdf7ed;
+  --purple: #692e99;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  color: #000;
+}
+
+/* Regular text styles */
+.text-regular {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Link styles */
+.text-link {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Placeholder color */
+::placeholder {
+  color: #646464;
+}
+
+/* Print styles */
+@media print {
+  @page {
+    margin: 2cm;
+  }
+
+  body {
+    background: white;
+  }
+
+  .no-print {
+    display: none;
+  }
+
+  nav,
+  footer,
+  button {
+    display: none !important;
+  }
+
+  .shadow-md {
+    box-shadow: none !important;
+  }
+
+  /* Ensure proper page breaks */
+  .page-break {
+    page-break-before: always;
+  }
+
+  /* Ensure the order confirmation prints with proper colors */
+  .bg-white {
+    background-color: white !important;
+  }
+
+  .text-purple {
+    color: #692e99 !important;
+  }
+
+  /* Ensure all content is visible */
+  .order-details {
+    display: block !important;
+  }
+
+  /* Format the order items table for print */
+  .order-items {
+    break-inside: avoid;
+  }
+
+  /* Adjust spacing for print */
+  .print-my-4 {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Ensure images print properly */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  /* Hide unnecessary elements when printing */
+  .print-hidden {
+    display: none !important;
+  }
+
+  /* Ensure text is readable when printed */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: black !important;
+  }
+
+  /* Format the receipt header */
+  .receipt-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  /* Format the receipt footer */
+  .receipt-footer {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}
+
+.sticky {
+  position: sticky;
+  top: 1.5rem; /* matches top-6 */
+  height: calc(100vh - 3rem); /* viewport height minus some spacing */
+}
+
+/* Hide scrollbar but keep functionality */
+.overflow-y-auto {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.overflow-y-auto::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
